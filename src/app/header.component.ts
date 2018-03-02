@@ -14,12 +14,13 @@ import { AuthService } from './auth.service';
   
                   <li><a [routerLink]="['singup']">Sign Up</a></li>
                   <li><a [routerLink]="['singin']">Sign In</a></li>
+ 
                   <li><a [routerLink]="['protected']">Protected</a></li>
   
               </ul>
               <ul class="nav navbar-nav navbar-right" *ngIf="isAuth()">
   
-                  <li><a (click)="onLogout()">Logout</a></li>
+                  <li><a (click)="onLogout()" style="cursor: pointer;">Logout</a></li>
               </ul>
           </div><!-- /.container-fluid -->
   
@@ -29,6 +30,8 @@ import { AuthService } from './auth.service';
 `
 })
 export class HeaderComponent  {
+
+   
 
   constructor(private authService: AuthService) { }
 

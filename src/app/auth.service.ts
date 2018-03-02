@@ -18,6 +18,8 @@ export class AuthService{
         .catch(function(error) {
             // Handle Errors here.
           console.log(error);
+          var errorCode = error.code;
+          var errorMessage = error.message;
             // ...
           });
 

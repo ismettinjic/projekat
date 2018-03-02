@@ -5,6 +5,7 @@ import { AuthService } from '../auth.service';
   selector: 'app-singup',
   template: `
   <h3>Please sign up to use all features</h3>
+
   <form [formGroup]="myForm" (ngSubmit)="onSignup()">
       <div class="input-group">
           <label for="email">E-Mail</label>
@@ -21,8 +22,9 @@ import { AuthService } from '../auth.service';
           <input formControlName="confirmPassword" type="password" id="confirm-password" #confirmPassword>
           <span *ngIf="!confirmPassword.pristine && confirmPassword.errors != null && confirmPassword.errors['passwordsNotMatch']">Passwords do not match</span>
       </div>
-      <button type="submit" [disabled]="!myForm.valid">Sign Up</button>
+      <button type="submit" [disabled]="!myForm.valid" class="btn btn-success">Sign Up</button>
   </form>
+  
 `
 })
 export class SingupComponent implements OnInit {
