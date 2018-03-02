@@ -11,4 +11,31 @@ export class AuthService{
             // ...
           });
     }
+
+    singinUser(user: User){
+        firebase.auth().signInWithEmailAndPassword(user.email, user.password)
+        
+        .catch(function(error) {
+            // Handle Errors here.
+          console.log(error);
+            // ...
+          });
+
+        }
+
+        logout(){
+            firebase.auth().signOut();
+        }
+        isAutenticated(){
+            var user = firebase.auth().currentUser;
+
+            if (user) {
+              // User is signed in.
+              return true;
+            } else {
+              // No user is signed in.
+              return false;
+            }
+
+          }
 }

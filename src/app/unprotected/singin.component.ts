@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators,ReactiveFormsModule ,FormControl, FormGroupDirective } from "@angular/forms";
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-singin',
@@ -26,9 +27,11 @@ export class SinginComponent implements OnInit {
   error = false;
   errorMessage = '';
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,private authService: AuthService) {}
 
   onSignin() {
+    
+    this.authService.singinUser(this.myForm.value);
     
   }
 
