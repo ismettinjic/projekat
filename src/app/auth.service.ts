@@ -3,7 +3,7 @@ import { User } from "./user";
 declare var firebase: any;
 export class AuthService{
     singupUser(user: User){// Dodan kod sa firebase-a
-        firebase.auth().signInWithEmailAndPassword(user.email, user.password)
+        firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
         
         .catch(function(error) {
             // Handle Errors here.
