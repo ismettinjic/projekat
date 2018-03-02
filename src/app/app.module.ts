@@ -10,15 +10,15 @@ import { HeaderComponent } from './shared/header.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ProtectedComponent
+    ProtectedComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     ReactiveFormsModule,
-    FormsModule,
-    HeaderComponent
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
