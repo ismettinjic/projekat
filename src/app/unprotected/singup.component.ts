@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl,ReactiveFormsModule,FormGroupDirective  } from "@angular/forms";
+import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-singup',
   template: `
@@ -31,10 +32,11 @@ export class SingupComponent implements OnInit {
   error = false;
   errorMessage = '';
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private authService: AuthService) {
   }
 
   onSignup() {
+    this.authService.singupUser(this.myForm.value);
       
   }
 

@@ -5,10 +5,11 @@ import { FormBuilder, FormGroup, Validators,ReactiveFormsModule ,FormControl, Fo
   selector: 'app-singin',
   template: `
   <h3>Please sign up to use all features</h3>
+
   <form [formGroup]="myForm" (ngSubmit)="onSignin()">
       <div class="input-group">
           <label for="email">E-Mail</label>
-          <input formControlName="email" type="email" id="email">
+          <input  formControlName="email" type="email" id="email">
       </div>
       <div class="input-group">
           <label for="password">Password</label>
@@ -16,6 +17,7 @@ import { FormBuilder, FormGroup, Validators,ReactiveFormsModule ,FormControl, Fo
       </div>
       <button type="submit" [disabled]="!myForm.valid">Sign In</button>
   </form>
+
 `
 })
 export class SinginComponent implements OnInit {

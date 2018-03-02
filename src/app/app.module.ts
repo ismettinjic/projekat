@@ -12,6 +12,7 @@ import { ProtectedComponent } from './protected/protected.component';
 import { HeaderComponent } from './header.component';
 import {RouterModule, Router} from '@angular/router';
 import { routing } from './app.routes';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { routing } from './app.routes';
     SinginComponent,
     SingupComponent,
     ProtectedComponent,
-    HeaderComponent
+    HeaderComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -29,9 +31,10 @@ import { routing } from './app.routes';
     HttpModule,
     ReactiveFormsModule,
     FormsModule,
-    routing
+    routing,
+  
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
