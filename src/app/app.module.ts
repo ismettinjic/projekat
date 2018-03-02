@@ -1,18 +1,35 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+
+import { SinginComponent } from './unprotected/singin.component';
+import { SingupComponent } from './unprotected/singup.component';
+import { ProtectedComponent } from './protected/protected.component';
+import { HeaderComponent } from './header.component';
+import {RouterModule, Router} from '@angular/router';
+import { routing } from './app.routes';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
+
+    SinginComponent,
+    SingupComponent,
+    ProtectedComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    ReactiveFormsModule,
+    FormsModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
