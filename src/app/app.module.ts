@@ -12,6 +12,7 @@ import { RouterModule, Router } from '@angular/router';
 import { SignupComponent } from "./unprotected/signup.component";
 import { SigninComponent } from "./unprotected/signin.component";
 import { AuthService } from './shared/auth.service';
+import { AuthGuard } from './shared/auth.guard'
 
 
 
@@ -31,7 +32,7 @@ import { AuthService } from './shared/auth.service';
     FormsModule,
     routing
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
