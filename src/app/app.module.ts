@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { ProtectedComponent } from './protected/protected.component';
+import { HeaderComponent } from './shared/header.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ProtectedComponent } from './protected/protected.component';
     FormsModule,
     HttpModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HeaderComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
